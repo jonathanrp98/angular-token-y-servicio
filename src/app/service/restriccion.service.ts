@@ -11,11 +11,11 @@ export class RestriccionService {
 
   public url: string;
   constructor(public httpCliente: HttpClient) {
-    this.url = environment.apiUrl ;
+    this.url = 'localhost:8090/restriccion' ;
   }
 
   public findAll(): Observable<any> {
-    return this.httpCliente.get(this.url);
-  };
+        return this.httpCliente.get(this.url);
+  }
 
 }
