@@ -8,16 +8,16 @@ import { RestriccionService } from 'src/app/service/restriccion.service';
   styleUrls: ['./restriccion-list.component.css']
 })
 export class RestriccionListComponent implements OnInit {
-  public listaRestriccion: Restriccion[];
+   listaRestriccion: Restriccion;
   constructor(public restriccionService: RestriccionService) { }
 
-
-  ngOnInit(){
+  ngOnInit() {
     this.findAll();
   }
 
   findAll() {
     this.restriccionService.findAll().subscribe(data => {
+      console.log(data);
       this.listaRestriccion = data;
     });
   }

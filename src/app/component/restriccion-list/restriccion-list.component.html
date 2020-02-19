@@ -1,5 +1,16 @@
-<h2>Lista Restriccion</h2>
-<li *ngFor="let restriccion of listaRestriccion">
-  {{restriccion.codigo}} {{restriccion.mensaje}} {{restriccion.valor}}
-<!--  <button [routerLink]="['/cliente-edit',cliente.clieId]">Editar</button>-->
-</li>
+<a [routerLink]="['/']">
+  <h2>Lista Restriccion</h2>
+</a>
+<div *ngFor="let restriccion of listaRestriccion">
+
+
+<span>{{ listaRestriccion.codigo }} </span>
+<span>{{ listaRestriccion.mensaje }} </span>
+
+
+<div *ngFor="let restriccion of listaRestriccion.valor ">
+  <span>{{ restriccion.codigo }} </span>
+  <span>{{ restriccion.nombre }} </span>
+  <span>{{ restriccion.descripcion }} </span>
+</div>
+</div>

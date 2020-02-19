@@ -8,7 +8,7 @@ import { RestriccionListComponent } from './component/restriccion-list/restricci
 // Auth HTTP_INTERCEPTORS TokenInterceptor
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '././auth/token.interceptor';
-import { PingComponent } from './ping/ping.component';
+
 
 // Service
 import { RestriccionService } from './service/restriccion.service';
@@ -17,20 +17,18 @@ import { RestriccionService } from './service/restriccion.service';
   declarations: [
     AppComponent,
     RestriccionListComponent,
-    PingComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [
+  providers: [RestriccionService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    },
-    RestriccionService,
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,21 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
-import { Restriccion } from '../domain/restriccion';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable()
 export class RestriccionService {
 
-  public url: string;
-  constructor(public httpCliente: HttpClient) {
-    this.url = 'localhost:8090/restriccion' ;
+  private url = 'http://127.0.0.1:8090/restriccion';
+
+  constructor(private httpCliente: HttpClient) {
+
   }
 
   public findAll(): Observable<any> {
-        return this.httpCliente.get(this.url);
+    return this.httpCliente.get(this.url);
   }
 
 }

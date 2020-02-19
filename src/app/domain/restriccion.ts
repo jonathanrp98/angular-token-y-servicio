@@ -2,7 +2,7 @@ export class Restriccion {
   constructor(
     public codigo: string,
     public mensaje: string,
-    public valor: string,
+    public valor: any,
 
     /*public id: number,
     public nombre: string,
